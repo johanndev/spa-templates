@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "johanndev",
+  "classifications": [
+    "Web",
+    "MVC",
+    "SPA"
+  ],
+  "identity": "JohannDev.DotNet.Web.Spa.ProjectTemplates.Vite.CSharp.6.0",
+  "name": "ASP.NET Core with Vite",
+  "shortName": "vite",
+  "sourceName": "Company.WebApplication1",
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "exclude": [
+        ".template.config/**"
+      ]
+    }
+  ],
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
