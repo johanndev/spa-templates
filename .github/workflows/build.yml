@@ -44,7 +44,7 @@ jobs:
         run: dotnet build 'src/JohannDev.DotNet.Web.Spa.ProjectTemplates.csproj'
       
       - name: Run template tests
-        run: dotnet test ./tests/Vite-CSharp.Tests --logger trx --results-directory "TestResults"
+        run: dotnet test tests.csproj --logger trx --results-directory "TestResults"
       
       - name: Upload dotnet test results
         uses: actions/upload-artifact@v2
