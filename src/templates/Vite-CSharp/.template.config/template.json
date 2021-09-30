@@ -22,5 +22,45 @@
   "tags": {
     "language": "C#",
     "type": "project"
+  },
+  "symbols": {
+    "Frontend Framework": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "vanilla",
+          "description": "Vanilla js"
+        },
+        {
+          "choice": "vue",
+          "description": "Vue js"
+        },
+        {
+          "choice": "react",
+          "description": "React"
+        },
+        {
+          "choice": "preact",
+          "description": "Preact"
+        },
+        {
+          "choice": "lit-element",
+          "description": "Lit-Element"
+        },
+        {
+          "choice": "svelte",
+          "description": "Svelte"
+        }
+      ],
+      "description": "The Frontend-Framework that should be scaffolded",
+      "defaultValue": "vanilla"
+    },
+    "Use TypeScript": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "If specified, the Frontend-Framework will be scaffolded to use TypeScript",
+      "defaultValue": "false"
+    }
   }
 }
