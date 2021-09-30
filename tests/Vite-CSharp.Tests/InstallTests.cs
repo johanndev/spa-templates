@@ -13,7 +13,7 @@ public class InstallTests : IClassFixture<SpaTemplatesTestFixture>
     [Fact]
     public async Task Template_can_be_restored_and_built()
     {
-        await using var tempDirectory = TempDirectory.NewShortTempDirectory();
+        await using var tempDirectory = TempDirectory.NewTempDirectory();
         var project = await tempDirectory.DotnetNewAsync("vite");
         await project.DotnetRestoreAsync();
         await project.DotnetBuildAsync();
@@ -34,7 +34,7 @@ public class InstallTests : IClassFixture<SpaTemplatesTestFixture>
     [InlineData("frontendFramework=svelte", "useTypeScript=true")]
     public async Task CLI_parameters_are_supported(params string[] arguments)
     {
-        await using var tempDirectory = TempDirectory.NewShortTempDirectory();
+        await using var tempDirectory = TempDirectory.NewTempDirectory();
 
         var argumentDictionary = arguments
             .Select(x => x.Split('=', StringSplitOptions.RemoveEmptyEntries))
