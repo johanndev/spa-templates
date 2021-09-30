@@ -25,4 +25,12 @@
     <Compile Remove="**\*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <GeneratedContent Include="Vite-CSharp.csproj.in" OutputPath="templates/Vite-CSharp/Company.WebApplication1.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\eng\CustomTasks\CustomTasks.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
 </Project>

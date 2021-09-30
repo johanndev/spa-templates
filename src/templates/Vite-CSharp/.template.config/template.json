@@ -9,6 +9,12 @@
   "identity": "JohannDev.DotNet.Web.Spa.ProjectTemplates.Vite.CSharp.6.0",
   "name": "ASP.NET Core with Vite",
   "shortName": "vite",
+  "preferNameDirectory": true,
+  "primaryOutputs": [
+    {
+      "path": "Company.WebApplication1.csproj"
+    }
+  ],
   "sourceName": "Company.WebApplication1",
   "sources": [
     {
@@ -24,7 +30,7 @@
     "type": "project"
   },
   "symbols": {
-    "Frontend Framework": {
+    "FrontendFramework": {
       "type": "parameter",
       "datatype": "choice",
       "choices": [
@@ -56,7 +62,7 @@
       "description": "The Frontend-Framework that should be scaffolded",
       "defaultValue": "vanilla"
     },
-    "Use TypeScript": {
+    "UseTypeScript": {
       "type": "parameter",
       "datatype": "bool",
       "description": "If specified, the Frontend-Framework will be scaffolded to use TypeScript",
