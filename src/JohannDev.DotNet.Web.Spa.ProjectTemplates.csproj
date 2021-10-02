@@ -6,7 +6,7 @@
     <PackageId>JohannDev.DotNet.Web.Spa.ProjectTemplates</PackageId>
     <Title>JohannDev Templates</Title>
     <Authors>johanndev</Authors>
-    <Description>Templates to use when creating an application for Adatum Corporation.</Description>
+    <Description>Templates for the integration of ASP.NET Core with Vite frontend tooling, see: vitejs.dev</Description>
     <PackageTags>dotnet-new;templates;spa</PackageTags>
 
     <TargetFramework>net6.0</TargetFramework>
