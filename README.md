@@ -34,6 +34,18 @@ dotnet new vite -o my-vite-project --frontendFramework vue --useTypeScript
 # alternative short form:
 dotnet new vite -o my-vite-project -f vue -t
 ```
+
+The templates supported by Vite (and, in extensions by this template) are:
+
+- vanilla
+- vue
+- react
+- preact
+- lit
+- svelte
+
+All technologies can optionally be scaffolded with TypeScript support.
+
 Afterwards, the project can be compiled and run; node dependencies are automatically restored on first run:
 ```bash
 cd my-vite-project
