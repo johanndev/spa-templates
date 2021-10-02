@@ -55,7 +55,7 @@ jobs:
         if: ${{ always() }}
 
       - name: Pack template project
-        if: github.event_name == 'release'
+        # if: github.event_name == 'release'
         run: dotnet pack ./src --configuration=Release --output=./Artefacts
 
       - name: "Publish Artefacts"
