@@ -1,10 +1,13 @@
 using Boxed.DotnetNewTest;
 using System;
 using System.Collections;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Xunit;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Vite_CSharp.Tests;
 
@@ -28,8 +31,8 @@ public class InstallTests : IClassFixture<SpaTemplatesTestFixture>
     [InlineData("frontendFramework=react", "useTypeScript=true")]
     [InlineData("frontendFramework=preact")]
     [InlineData("frontendFramework=preact", "useTypeScript=true")]
-    [InlineData("frontendFramework=lit-element")]
-    [InlineData("frontendFramework=lit-element", "useTypeScript=true")]
+    [InlineData("frontendFramework=lit")]
+    [InlineData("frontendFramework=lit", "useTypeScript=true")]
     [InlineData("frontendFramework=svelte")]
     [InlineData("frontendFramework=svelte", "useTypeScript=true")]
     public async Task CLI_parameters_are_supported(params string[] arguments)
@@ -44,6 +47,11 @@ public class InstallTests : IClassFixture<SpaTemplatesTestFixture>
             templateName: "vite",
             arguments: argumentDictionary
         );
+
+        //Ensure that a ClientApp folder was created
+        var clientAppFolder = Path.Combine(tempDirectory.DirectoryPath, "ClientApp");
+        Assert.True(Directory.Exists(clientAppFolder));
+
         await project.DotnetRestoreAsync();
         await project.DotnetBuildAsync();
     }

@@ -21,8 +21,69 @@
       "source": "./",
       "target": "./",
       "exclude": [
-        ".template.config/**"
+        ".template.config/**",
+        ".files/**"
       ]
+    },
+    {
+      "condition": "(FrontendFramework == \"vanilla\" && !UseTypeScript)",
+      "source": ".files/vanilla/",
+      "target": "./ClientApp/"
+    },
+    {
+      "condition": "(FrontendFramework == \"vanilla\" && UseTypeScript)",
+      "source": ".files/vanilla-ts/",
+      "target": "./ClientApp/"
+    },
+    {
+      "condition": "(FrontendFramework == \"vue\" && !UseTypeScript)",
+      "source": ".files/vue/",
+      "target": "./ClientApp/"
+    },
+    {
+      "condition": "(FrontendFramework == \"vue\" && UseTypeScript)",
+      "source": ".files/vue-ts/",
+      "target": "./ClientApp/"
+    },
+    {
+      "condition": "(FrontendFramework == \"react\" && !UseTypeScript)",
+      "source": ".files/react/",
+      "target": "./ClientApp/"
+    },
+    {
+      "condition": "(FrontendFramework == \"react\" && UseTypeScript)",
+      "source": ".files/react-ts/",
+      "target": "./ClientApp/"
+    },
+    {
+      "condition": "(FrontendFramework == \"preact\" && !UseTypeScript)",
+      "source": ".files/preact/",
+      "target": "./ClientApp/"
+    },
+    {
+      "condition": "(FrontendFramework == \"preact\" && UseTypeScript)",
+      "source": ".files/preact-ts/",
+      "target": "./ClientApp/"
+    },
+    {
+      "condition": "(FrontendFramework == \"lit\" && !UseTypeScript)",
+      "source": ".files/lit/",
+      "target": "./ClientApp/"
+    },
+    {
+      "condition": "(FrontendFramework == \"lit\" && UseTypeScript)",
+      "source": ".files/lit-ts/",
+      "target": "./ClientApp/"
+    },
+    {
+      "condition": "(FrontendFramework == \"svelte\" && !UseTypeScript)",
+      "source": ".files/svelte/",
+      "target": "./ClientApp/"
+    },
+    {
+      "condition": "(FrontendFramework == \"svelte\" && UseTypeScript)",
+      "source": ".files/svelte-ts/",
+      "target": "./ClientApp/"
     }
   ],
   "tags": {
@@ -51,7 +112,7 @@
           "description": "Preact"
         },
         {
-          "choice": "lit-element",
+          "choice": "lit",
           "description": "Lit-Element"
         },
         {

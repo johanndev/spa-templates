@@ -1,0 +1,15 @@
+{
+  "name": "vanilla-ts-app",
+  "version": "0.0.0",
+  "scripts": {
+    "prestart": "node ./aspnetcore-https.js",
+    "start": "vite",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.2",
+    "vite": "^2.6.0"
+  }
+}
