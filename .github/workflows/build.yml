@@ -59,7 +59,7 @@ jobs:
         run: dotnet pack ./src --configuration=Release --output=./Artefacts
 
       - name: "Publish Artefacts"
-        if: github.event_name != 'pull_request'
+        # if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v2.2.4
         with:
           name: ${{matrix.os}}
