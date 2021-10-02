@@ -26,7 +26,7 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest]
     steps:
       - name: "Checkout"
         uses: actions/checkout@v2.3.4
@@ -41,7 +41,7 @@ jobs:
           include-prerelease: true
           
       - name: Build template project
-        run: dotnet build 'src/JohannDev.DotNet.Web.Spa.ProjectTemplates.csproj'
+        run: dotnet build 'src/JohannDev.DotNet.Web.Spa.ProjectTemplates.csproj' --configuration=Release
       
       - name: Run template tests
         run: dotnet test tests.csproj --logger trx --results-directory "TestResults"
@@ -49,12 +49,17 @@ jobs:
       - name: Upload dotnet test results
         uses: actions/upload-artifact@v2
         with:
-          name: dotnet-results
+          name: dotnet-results.${{github.run_number}}
           path: TestResults
         # Use always() to always run this step to publish test results when there are test failures
         if: ${{ always() }}
 
+      - name: Pack template project
+        if: github.event_name != 'pull_request'
+        run: dotnet pack ./src --configuration=Release --output=./Artefacts
+
       - name: "Publish Artefacts"
+        if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v2.2.4
         with:
           name: ${{matrix.os}}
