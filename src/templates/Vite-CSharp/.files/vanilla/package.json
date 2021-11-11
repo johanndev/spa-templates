@@ -1,5 +1,5 @@
 {
-  "name": "vanilla-app",
+  "name": "vanilla",
   "version": "0.0.0",
   "scripts": {
     "prestart": "node ./aspnetcore-https.js",
@@ -9,6 +9,6 @@
     "serve": "vite preview"
   },
   "devDependencies": {
-    "vite": "^2.6.0"
+    "vite": "^2.6.4"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "preact-app",
+  "name": "preact",
   "version": "0.0.0",
   "scripts": {
     "prestart": "node ./aspnetcore-https.js",
@@ -13,6 +13,6 @@
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.0.0",
-    "vite": "^2.6.0"
+    "vite": "^2.6.4"
   }
 }
