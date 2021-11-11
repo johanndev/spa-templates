@@ -1,5 +1,5 @@
 {
-  "name": "vanilla-ts-app",
+  "name": "vanilla-ts",
   "version": "0.0.0",
   "scripts": {
     "prestart": "node ./aspnetcore-https.js",
@@ -10,6 +10,6 @@
   },
   "devDependencies": {
     "typescript": "^4.3.2",
-    "vite": "^2.6.0"
+    "vite": "^2.6.4"
   }
 }
