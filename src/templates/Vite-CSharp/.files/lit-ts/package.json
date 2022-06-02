@@ -11,6 +11,10 @@
     "types"
   ],
   "scripts": {
+//#if(RequiresHttps)
+    "prestart": "node ./aspnetcore-https.js",
+//#endif
+    "start": "vite",
     "dev": "vite",
     "build": "tsc && vite build"
   },

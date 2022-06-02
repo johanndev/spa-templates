@@ -26,6 +26,12 @@
       ]
     },
     {
+      "condition": "(!RequiresHttps)",
+      "exclude": [
+        "./ClientApp/aspnetcore-https.js"
+      ]
+    },
+    {
       "condition": "(FrontendFramework == \"vanilla\" && !UseTypeScript)",
       "source": ".files/vanilla/",
       "target": "./ClientApp/"
@@ -128,6 +134,22 @@
       "datatype": "bool",
       "description": "If specified, the Frontend-Framework will be scaffolded to use TypeScript",
       "defaultValue": "false"
+    },
+    "UsePNPM": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "If specified, pmpm will by used instead of npm",
+      "defaultValue": "false"
+    },
+    "RequiresHttps": {
+      "type": "computed",
+      "value": "!NoHttps"
+    },
+    "NoHttps": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Whether to turn off HTTPS."
     }
   }
 }

@@ -8,6 +8,14 @@
 		"UseTypeScript": {
 			"longName": "useTypeScript",
 			"shortName": "t"
+		},
+		"UsePNPM": {
+			"longName": "usePNPM",
+			"shortName": "p"
+		},
+		"NoHttps": {
+			"longName": "no-https",
+			"shortName": ""
 		}
 	},
 	"usageExamples": [

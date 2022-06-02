@@ -6,7 +6,9 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
+#if (RequiresHttps)
 app.UseHttpsRedirection();
+#endif
 
 app.UseAuthorization();
 
