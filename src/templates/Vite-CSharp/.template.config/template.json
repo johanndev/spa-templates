@@ -90,6 +90,16 @@
       "condition": "(FrontendFramework == \"svelte\" && UseTypeScript)",
       "source": ".files/svelte-ts/",
       "target": "./ClientApp/"
+    },
+    {
+      "condition": "(FrontendFramework == \"solid\" && !UseTypeScript)",
+      "source": ".files/solid/",
+      "target": "./ClientApp/"
+    },
+    {
+      "condition": "(FrontendFramework == \"solid\" && UseTypeScript)",
+      "source": ".files/solid-ts/",
+      "target": "./ClientApp/"
     }
   ],
   "tags": {
@@ -124,6 +134,10 @@
         {
           "choice": "svelte",
           "description": "Svelte"
+        },
+        {
+          "choice": "solid",
+          "description": "Solid js"
         }
       ],
       "description": "The Frontend-Framework that should be scaffolded",

@@ -43,6 +43,7 @@ The templates supported by Vite (and, in extensions by this template) are:
 - preact
 - lit
 - svelte
+- solid
 
 All technologies can optionally be scaffolded with TypeScript support.
 
