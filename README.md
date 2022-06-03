@@ -24,7 +24,7 @@ dotnet restore
 dotnet build
 dotnet pack -c=Release // Prints the path to the nupkg
 
-dotnet install -i <path/to/the/nupkg>
+dotnet new --install <path/to/the/nupkg>
 ```
 
 ## Usage
@@ -35,6 +35,20 @@ dotnet new vite -o my-vite-project --frontendFramework vue --useTypeScript
 dotnet new vite -o my-vite-project -f vue -t
 ```
 
+
+It is posible to create a new project that will use pnpm instead od npm:
+```bash
+dotnet new vite -o my-vite-project --frontendFramework solid --useTypeScript --usePNPM
+# alternative short form:
+dotnet new vite -o my-vite-project -f solid -t -p
+```
+
+
+Example without https:
+```bash
+dotnet new vite -o my-vite-project --frontendFramework vanilla --useTypeScript --no-https
+```
+
 The templates supported by Vite (and, in extensions by this template) are:
 
 - vanilla
@@ -43,6 +57,7 @@ The templates supported by Vite (and, in extensions by this template) are:
 - preact
 - lit
 - svelte
+- solid
 
 All technologies can optionally be scaffolded with TypeScript support.
 

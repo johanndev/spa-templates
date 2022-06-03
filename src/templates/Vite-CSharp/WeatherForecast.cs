@@ -1,4 +1,4 @@
-namespace Vite_CSharp;
+namespace Company.WebApplication1;
 
 public class WeatherForecast
 {

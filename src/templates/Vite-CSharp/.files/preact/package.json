@@ -2,7 +2,9 @@
   "name": "preact",
   "version": "0.0.0",
   "scripts": {
+//#if(RequiresHttps)
     "prestart": "node ./aspnetcore-https.js",
+//#endif
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
@@ -12,7 +14,8 @@
     "preact": "^10.5.13"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.0.0",
+    "@preact/preset-vite": "^2.2.0",
+    "@babel/core": "^7.18.2",
     "vite": "^2.6.4"
   }
 }

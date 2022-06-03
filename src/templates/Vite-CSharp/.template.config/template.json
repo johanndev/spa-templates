@@ -28,62 +28,156 @@
     {
       "condition": "(FrontendFramework == \"vanilla\" && !UseTypeScript)",
       "source": ".files/vanilla/",
-      "target": "./ClientApp/"
+      "target": "./ClientApp/",
+      "modifiers": [
+        {
+          "condition": "(!RequiresHttps)",
+          "exclude": "**/aspnetcore-https.js"
+        }
+      ]
     },
     {
       "condition": "(FrontendFramework == \"vanilla\" && UseTypeScript)",
       "source": ".files/vanilla-ts/",
-      "target": "./ClientApp/"
+      "target": "./ClientApp/",
+      "modifiers": [
+        {
+          "condition": "(!RequiresHttps)",
+          "exclude": "**/aspnetcore-https.js"
+        }
+      ]
     },
     {
       "condition": "(FrontendFramework == \"vue\" && !UseTypeScript)",
       "source": ".files/vue/",
-      "target": "./ClientApp/"
+      "target": "./ClientApp/",
+      "modifiers": [
+        {
+          "condition": "(!RequiresHttps)",
+          "exclude": "**/aspnetcore-https.js"
+        }
+      ]
     },
     {
       "condition": "(FrontendFramework == \"vue\" && UseTypeScript)",
       "source": ".files/vue-ts/",
-      "target": "./ClientApp/"
+      "target": "./ClientApp/",
+      "modifiers": [
+        {
+          "condition": "(!RequiresHttps)",
+          "exclude": "**/aspnetcore-https.js"
+        }
+      ]
     },
     {
       "condition": "(FrontendFramework == \"react\" && !UseTypeScript)",
       "source": ".files/react/",
-      "target": "./ClientApp/"
+      "target": "./ClientApp/",
+      "modifiers": [
+        {
+          "condition": "(!RequiresHttps)",
+          "exclude": "**/aspnetcore-https.js"
+        }
+      ]
     },
     {
       "condition": "(FrontendFramework == \"react\" && UseTypeScript)",
       "source": ".files/react-ts/",
-      "target": "./ClientApp/"
+      "target": "./ClientApp/",
+      "modifiers": [
+        {
+          "condition": "(!RequiresHttps)",
+          "exclude": "**/aspnetcore-https.js"
+        }
+      ]
     },
     {
       "condition": "(FrontendFramework == \"preact\" && !UseTypeScript)",
       "source": ".files/preact/",
-      "target": "./ClientApp/"
+      "target": "./ClientApp/",
+      "modifiers": [
+        {
+          "condition": "(!RequiresHttps)",
+          "exclude": "**/aspnetcore-https.js"
+        }
+      ]
     },
     {
       "condition": "(FrontendFramework == \"preact\" && UseTypeScript)",
       "source": ".files/preact-ts/",
-      "target": "./ClientApp/"
+      "target": "./ClientApp/",
+      "modifiers": [
+        {
+          "condition": "(!RequiresHttps)",
+          "exclude": "**/aspnetcore-https.js"
+        }
+      ]
     },
     {
       "condition": "(FrontendFramework == \"lit\" && !UseTypeScript)",
       "source": ".files/lit/",
-      "target": "./ClientApp/"
+      "target": "./ClientApp/",
+      "modifiers": [
+        {
+          "condition": "(!RequiresHttps)",
+          "exclude": "**/aspnetcore-https.js"
+        }
+      ]
     },
     {
       "condition": "(FrontendFramework == \"lit\" && UseTypeScript)",
       "source": ".files/lit-ts/",
-      "target": "./ClientApp/"
+      "target": "./ClientApp/",
+      "modifiers": [
+        {
+          "condition": "(!RequiresHttps)",
+          "exclude": "**/aspnetcore-https.js"
+        }
+      ]
     },
     {
       "condition": "(FrontendFramework == \"svelte\" && !UseTypeScript)",
       "source": ".files/svelte/",
-      "target": "./ClientApp/"
+      "target": "./ClientApp/",
+      "modifiers": [
+        {
+          "condition": "(!RequiresHttps)",
+          "exclude": "**/aspnetcore-https.js"
+        }
+      ]
     },
     {
       "condition": "(FrontendFramework == \"svelte\" && UseTypeScript)",
       "source": ".files/svelte-ts/",
-      "target": "./ClientApp/"
+      "target": "./ClientApp/",
+      "modifiers": [
+        {
+          "condition": "(!RequiresHttps)",
+          "exclude": "**/aspnetcore-https.js"
+        }
+      ]
+    },
+    {
+      "condition": "(FrontendFramework == \"solid\" && !UseTypeScript)",
+      "source": ".files/solid/",
+      "target": "./ClientApp/",
+      "modifiers": [
+        {
+          "condition": "(!RequiresHttps)",
+          "exclude": "**/aspnetcore-https.js"
+        }
+      ]
+    },
+    {
+      "condition": "(FrontendFramework == \"solid\" && UseTypeScript)",
+      "source": ".files/solid-ts/",
+      "target": "./ClientApp/",
+      "modifiers": [
+        {
+          "condition": "(!RequiresHttps)",
+          "exclude": "**/aspnetcore-https.js"
+        }
+      ]
     }
   ],
   "tags": {
@@ -118,6 +212,10 @@
         {
           "choice": "svelte",
           "description": "Svelte"
+        },
+        {
+          "choice": "solid",
+          "description": "Solid js"
         }
       ],
       "description": "The Frontend-Framework that should be scaffolded",
@@ -128,6 +226,22 @@
       "datatype": "bool",
       "description": "If specified, the Frontend-Framework will be scaffolded to use TypeScript",
       "defaultValue": "false"
+    },
+    "UsePNPM": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "If specified, pmpm will by used instead of npm",
+      "defaultValue": "false"
+    },
+    "RequiresHttps": {
+      "type": "computed",
+      "value": "!NoHttps"
+    },
+    "NoHttps": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Whether to turn off HTTPS."
     }
   }
 }

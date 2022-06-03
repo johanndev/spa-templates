@@ -35,6 +35,8 @@ public class InstallTests : IClassFixture<SpaTemplatesTestFixture>
     [InlineData("frontendFramework=lit", "useTypeScript=true")]
     [InlineData("frontendFramework=svelte")]
     [InlineData("frontendFramework=svelte", "useTypeScript=true")]
+    [InlineData("frontendFramework=solid")]
+    [InlineData("frontendFramework=solid", "useTypeScript=true")]
     public async Task CLI_parameters_are_supported(params string[] arguments)
     {
         await using var tempDirectory = TempDirectory.NewTempDirectory();
