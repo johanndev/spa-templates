@@ -10,8 +10,12 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 #endif
 
+app.UseStaticFiles();
+
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapFallbackToFile("index.html");
 
 app.Run();
